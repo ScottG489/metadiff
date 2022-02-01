@@ -15,6 +15,6 @@ public class App {
         UnifiedDiffParser unifiedDiffParser =
                 new UnifiedDiffParserCreator().create();
         List<UnifiedDiff> unifiedDiffs = unifiedDiffParser.parse(diffContent);
-        return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(unifiedDiffs.get(0));
+        return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(unifiedDiffs);
     }
 }
