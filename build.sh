@@ -2,10 +2,12 @@
 
 readonly IMAGE_NAME='scottg489/metadiff-build:latest'
 readonly ID_RSA=$1
+readonly DOCKER_CONFIG=$2
 
 read -r -d '' JSON_BODY <<- EOM
   {
-  "ID_RSA": "$ID_RSA"
+  "ID_RSA": "$ID_RSA",
+  "DOCKER_CONFIG": "$DOCKER_CONFIG"
   }
 EOM
 
