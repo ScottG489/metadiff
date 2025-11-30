@@ -8,7 +8,7 @@ mainClassName = 'App'
 dependencies {
     compile 'com.google.guava:guava:33.5.0-jre'
 
-    compile 'io.github.scottg489:unified-diff-parser:0.5.2'
+    compile 'io.github.scottg489:unified-diff-parser:0.5.5'
 
     testCompile 'junit:junit:4.13.2'
 }
