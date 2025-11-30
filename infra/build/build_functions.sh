@@ -21,7 +21,7 @@ setup_credentials() {
   chmod 400 /root/.ssh/id_rsa
 }
 
-build_push_application() {
+build_test() {
   local ROOT_DIR
   readonly ROOT_DIR=$(get_git_root_dir)
   cd "$ROOT_DIR"
@@ -29,5 +29,8 @@ build_push_application() {
   ./gradlew --info build install
 
   docker build -t scottg489/metadiff:latest .
+}
+
+push_application() {
   docker push scottg489/metadiff:latest
 }

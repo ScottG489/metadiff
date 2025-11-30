@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
 
-readonly IMAGE_NAME='scottg489/metadiff-build:latest'
-readonly ID_RSA=$1
-readonly DOCKER_CONFIG=$2
+readonly RUN_TASK=$1
+readonly ID_RSA=$2
+readonly DOCKER_CONFIG=$3
+readonly GIT_BRANCH=${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}
+readonly IMAGE_TAG=$([[ $GIT_BRANCH == "master" ]] && echo -n "latest" || sed 's/[^a-zA-Z0-9]/-/g' <<< "$GIT_BRANCH")
+readonly IMAGE_NAME="scottg489/metadiff-build:$IMAGE_TAG"
 
 read -r -d '' JSON_BODY <<- EOM
   {
   "ID_RSA": "$ID_RSA",
-  "DOCKER_CONFIG": "$DOCKER_CONFIG"
+  "DOCKER_CONFIG": "$DOCKER_CONFIG",
+  "RUN_TASK": "$RUN_TASK",
+  "GIT_BRANCH": "$GIT_BRANCH"
   }
 EOM
 

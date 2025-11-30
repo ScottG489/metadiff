@@ -13,8 +13,16 @@ sleep 3
 
 declare -r _PROJECT_NAME='metadiff'
 declare -r _GIT_REPO='git@github.com:ScottG489/metadiff.git'
+declare -r _RUN_TASK=$(jq -r .RUN_TASK <<< "$1")
+declare -r _GIT_BRANCH=$(jq -r .GIT_BRANCH <<< "$1")
 
-git clone $_GIT_REPO
-cd "$_PROJECT_NAME"
+if [ ! -d "$_PROJECT_NAME" ]; then
+  git clone --branch $_GIT_BRANCH $_GIT_REPO
+fi
+cd $_PROJECT_NAME
 
-build_push_application
+build_test
+
+[ "$_RUN_TASK" != "deploy" ] && exit 0
+
+push_application
