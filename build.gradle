@@ -6,7 +6,7 @@ plugins {
 mainClassName = 'App'
 
 dependencies {
-    compile 'com.google.guava:guava:23.6.1-jre'
+    compile 'com.google.guava:guava:33.5.0-jre'
 
     compile 'io.github.scottg489:unified-diff-parser:0.5.2'
 
