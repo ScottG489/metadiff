@@ -3,7 +3,7 @@ FROM ubuntu:24.04@sha256:c35e29c9450151419d9448b0fd75374fec4fff364a27f176fb458d4
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   git=1:2.43.0-1ubuntu7.3 \
-  openssh-client=1:9.6p1-3ubuntu13 \
+  openssh-client=1:9.6p1-3ubuntu13.11 \
   openjdk-17-jdk=17.0.17+10-1~24.04 \
   jq=1.7.1-3ubuntu0.24.04.1 \
   curl=8.5.0-2ubuntu10.6 \
