@@ -5,7 +5,7 @@ RUN apt-get update && \
   git=1:2.43.0-1ubuntu7.3 \
   openssh-client=1:9.6p1-3ubuntu13.15 \
   openjdk-17-jdk=17.0.18+8-1~24.04.1 \
-  jq=1.7.1-3ubuntu0.24.04.1 \
+  jq=1.7.1-3ubuntu0.24.04.2 \
   curl=8.5.0-2ubuntu10.8 \
   gnupg=2.4.4-2ubuntu17.4 \
   lsb-release=12.0-2 \
