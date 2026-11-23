@@ -1,4 +1,4 @@
-FROM eclipse-temurin:25@sha256:e787e08ef76f4c16866108cd7f9fcd96a68eef3ac6cc76866897d4d02d5a2262
+FROM eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
 
 RUN mkdir /opt/metadiff/
 COPY build/install/metadiff /opt/metadiff/
